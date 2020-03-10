@@ -1,6 +1,15 @@
 import React from "react";
+import Toastmasters from "./components/Toastmasters";
+import Gifts from "./components/Gifts";
+import RSVPDataWrapper from "./components/RSVPDataWrapper";
+
+import firebase from "firebase/app";
+import "firebase/auth";
+import { FirebaseAuthProvider } from "@react-firebase/auth";
+import config from "./firebase.config.js";
+
 import svolvaerGeita from "./images/svolvaer.png";
-import "./app.less";
+import css from "./app.less";
 
 const menuItems = [
   { text: "Kommer du?", ref: null },
@@ -11,27 +20,37 @@ const menuItems = [
   { text: "FAQ", ref: null }
 ];
 
-function App() {
+const App = () => {
   return (
-    <div className="app">
-      <h1 className="header">Marie & Daniel</h1>
-      <p className="date">19.09.2020</p>
+    <FirebaseAuthProvider {...config} firebase={firebase}>
+      <div className={css.app}>
+        <div className={css.contentContainer}>
+          <h1 className={css.header}>Marie & Daniel</h1>
+          <p className={css.date}>07.11.2020</p>
 
-      <img
-        src={svolvaerGeita}
-        alt="Daniel og Marie på svolværgeita"
-        className="header-image"
-      />
+          <img
+            src={svolvaerGeita}
+            alt="Daniel og Marie på svolværgeita"
+            className={css.headerImage}
+          />
 
-      <div className="menu-bar">
-        {menuItems.map(item => (
-          <span key={item.text} className="menu-item">
-            {item.text}
-          </span>
-        ))}
+          <div className={css.menuBar}>
+            {menuItems.map(item => (
+              <span key={item.text} className={css.menuItem}>
+                {item.text}
+              </span>
+            ))}
+          </div>
+
+          <RSVPDataWrapper />
+
+          <Toastmasters />
+
+          <Gifts />
+        </div>
       </div>
-    </div>
+    </FirebaseAuthProvider>
   );
-}
+};
 
 export default App;

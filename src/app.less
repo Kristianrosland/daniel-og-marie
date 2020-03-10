@@ -5,17 +5,25 @@
 .app {
   background-color: @primaryColor;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
 
-  padding: 1% 10%;
+  padding: 1% 10% @blockSpacing 10%;
   box-sizing: border-box;
 
+  font-family: @fontRoboto;
+  letter-spacing: @letterSpacingMedium;
+
+  display: flex;
+  justify-content: center;
+}
+
+.contentContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  font-family: @fontRoboto;
-  letter-spacing: @letterSpacingMedium;
+  width: 100%;
+  max-width: 1300px;
 }
 
 .header {
@@ -40,28 +48,34 @@
   font-size: 20px;
 }
 
-.header-image {
+.headerImage {
   width: 100%;
 }
 
-.menu-bar  {
+.menuBar  {
   margin-top: 1.5rem;
   display: flex;
   flex-direction: row;
 }
 
-.menu-item {
+.menuItem {
   font-family: @fontRoboto;
   letter-spacing: @letterSpacingLarge;
   color: @white;
 
   &::after {
     content: "|";
+    font-weight: 400;
     color: @secondaryColor;
     margin: 0 1rem;
   }
 
   &:last-of-type::after {
     content: "";
+  }
+
+  &:hover {
+    cursor: pointer;
+    font-weight: 800;
   }
 }

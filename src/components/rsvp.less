@@ -1,0 +1,238 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.outerContainer {
+  min-width: 100%;
+  height: 32rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 15rem;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  width: 30%;
+  margin-right: 2rem;
+
+  background-color: @white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2rem;
+  box-sizing: border-box;
+
+  transition: all 0.5s ease-in-out;
+  position: relative;
+
+  &.expanded {
+    width: 70%;
+    flex: 1 0 60%;
+
+    justify-content: flex-start;
+  }
+}
+
+.loggedInContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  color: @primaryColor;
+  font-family: @fontRoboto;
+  font-size: 50px;
+  text-align: center;
+
+  width: 100%;
+  border-bottom: 1px solid @secondaryColor;
+  padding-bottom: 0.5rem;
+}
+
+.description  {
+  text-align: center;
+  font-size: 1.25rem;
+
+  div:first-of-type {
+    color: @secondaryColor;
+    margin-bottom: 20%;
+  }
+
+  div:last-of-type {
+    color: @primaryColor;
+  }
+}
+
+.inputAndErrorContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputField {
+  width: 100%;
+  height: 4rem;
+
+  background-color: @secondaryColor;
+  color: @white;
+  border: none;
+
+  text-align: center;
+  font-family: @fontRoboto;
+  font-size: 3rem;
+  letter-spacing: 10px;
+  box-sizing: border-box;
+
+  &:invalid {
+    padding-bottom: 1rem;
+  }
+
+  &:focus {
+    padding-bottom: 0;
+  }
+}
+
+.inputField::placeholder {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: @letterSpacingLarge;
+  color: @white;
+}
+
+.upsell {
+  font-family: @fontPermanentMarker;
+  font-size: 1.2rem;
+
+  color: @secondaryColor;
+
+  position: absolute;
+  left: -5.5rem;
+  top: -2rem;
+
+  transform: rotate(-20deg);
+}
+
+.arrow {
+  position: absolute;
+  left: -3rem;
+  top: 1rem;
+
+  height: auto;
+}
+
+.error {
+  color: @errorRed;
+}
+
+.elvImageContainer {
+  height: 100%;
+  width: 1000px;
+
+  background-color: red;
+}
+
+.elvImage {
+  height: 100%;
+}
+
+.formContainer {
+  min-height: 15rem;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  color: @primaryColor;
+}
+
+.formHeader {
+  font-size: 1.5rem;
+  color: @primaryColor;
+}
+
+.form {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.attendingCheckboxAndLabel {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5rem;
+  cursor: pointer;
+
+  &:first-of-type {
+    margin-top: 2rem;
+  }
+}
+
+.attendingCheckbox {
+  height: 15px;
+  width: 15px;
+  margin-right: 1rem;
+
+  border: 1px solid @primaryColor;
+}
+
+.checked {
+  background-color: @primaryColor;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 2px solid @secondaryColor;
+  padding-left: 2rem;
+  height: 100%;
+
+  .menuEntry {
+    display: flex;
+    flex-direction: column;
+
+    .courseHeader {
+      color: @primaryColor;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .courseDescription {
+      color: black;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+}
+
+.allergiesInput {
+  font-size: 1.2rem;
+  letter-spacing: @letterSpacingMedium;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  text-align: left;
+
+  &:invalid {
+    padding-bottom: 0;
+  }
+}
+
+.allergiesInput::placeholder {
+  font-size: 1.2rem;
+}

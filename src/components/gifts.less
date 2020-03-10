@@ -1,0 +1,81 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.container {
+  width: 100%;
+  margin-top: @blockSpacing;
+}
+
+.header {
+  width: 100%;
+
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: @letterSpacingLarge;
+  text-align: center;
+
+  color: @white;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.description {
+  color: @white;
+  border-left: 2px solid @secondaryColor;
+
+  letter-spacing: @letterSpacingLarge;
+
+  padding-left: 1rem;
+  max-width: 50%;
+  min-height: 5rem;
+
+  span {
+    color: @secondaryColor;
+  }
+}
+
+.logoContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.servise {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.link {
+  color: @white;
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  letter-spacing: @letterSpacingLarge;
+
+  a {
+    text-decoration: none;
+    color: @secondaryColor;
+  }
+}
+
+.psst1 {
+  margin-top: 3rem;
+  font-family: @fontPermanentMarker;
+  color: @secondaryColor;
+}
+
+.psst2 {
+  font-family: @fontPermanentMarker;
+  color: @secondaryColor;
+  margin-left: 1rem;
+
+  width: 15rem;
+}

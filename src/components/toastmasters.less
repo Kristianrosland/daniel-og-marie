@@ -1,0 +1,102 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  width: 50%;
+  margin-top: 3rem;
+
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.permanentMarker {
+  position: absolute;
+  font-family: @fontPermanentMarker;
+  color: @secondaryColor;
+  font-size: 1.25rem;
+
+  img {
+    position: absolute;
+  }
+}
+
+.advokaten {
+  left: -4rem;
+  top: -1.75rem;
+  transform: rotate(-15deg);
+
+  img {
+    transform: rotate(25deg);
+    top: 2rem;
+    left: 1rem;
+  }
+}
+
+.psykologen {
+  right: -4rem;
+  bottom: -1.75rem;
+  transform: rotate(-15deg);
+
+  img {
+    transform: rotate(225deg);
+    top: -2.5rem;
+    left: 5.5rem;
+  }
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-top: 3rem;
+}
+
+.contactInfo {
+  width: 50%;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  text-decoration: none;
+  color: @primaryColor;
+
+  img {
+    width: 30px;
+    height: 30px;
+
+    margin-right: 1rem;
+  }
+
+  img.mail {
+    height: 20px;
+  }
+
+  img.fb {
+    width: 45px;
+    height: 40px;
+    margin-left: -7.5px;
+  }
+}
