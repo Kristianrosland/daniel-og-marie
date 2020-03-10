@@ -16,6 +16,10 @@
   text-align: center;
 
   color: @white;
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 1.5rem;
+  }
 }
 
 .topContainer {
@@ -23,6 +27,11 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 1rem;
+
+  @media all and (max-width: 400px) {
+    flex-direction: column;
+    flex-flow: column-reverse;
+  }
 }
 
 .description {
@@ -38,6 +47,16 @@
   span {
     color: @secondaryColor;
   }
+
+  @media all and (max-width: 500px) {
+    font-size: 0.8rem;
+  }
+
+  @media all and (max-width: 400px) {
+    max-width: 100%;
+    min-height: 2.5rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .logoContainer {
@@ -45,11 +64,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media all and (max-width: @mobileLarge) {
+    img {
+      width: 75%;
+    }
+  }
+
+  @media all and (max-width: 400px) {
+    width: 100%;
+    img {
+      width: 50%;
+    }
+    margin-top: 1rem;
+  }
 }
 
 .servise {
   margin-top: 1.5rem;
   width: 100%;
+
+  @media all and (max-width: @mobileLarge) {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+  }
+
+  @media all and (max-width: 400px) {
+    margin-top: 0.5rem;
+  }
 }
 
 .link {
@@ -63,6 +105,10 @@
   a {
     text-decoration: none;
     color: @secondaryColor;
+  }
+
+  @media all and (max-width: 450px) {
+    font-size: 1rem;
   }
 }
 
@@ -78,4 +124,23 @@
   margin-left: 1rem;
 
   width: 15rem;
+}
+
+@media all and (max-width: 450px) {
+  .psst1 .psst2 {
+    font-size: 0.9rem;
+  }
+}
+
+@media all and (max-width: @mobileLarge) {
+  .notMobile {
+    display: none;
+  }
+}
+
+@media all and (min-width: @mobileLarge) {
+  .onlyMobile {
+    display: none;
+    min-height: unset;
+  }
 }

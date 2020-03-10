@@ -15,9 +15,9 @@ const menuItems = [
   { text: "Kommer du?", ref: null },
   { text: "Tale?", ref: null },
   { text: "Program", ref: null },
-  { text: "Hvem er vi?", ref: null },
-  { text: "Gaveønsker", ref: null },
-  { text: "FAQ", ref: null }
+  // { text: "Hvem er vi?", ref: null },
+  { text: "Gaveønsker", ref: null }
+  // { text: "FAQ", ref: null }
 ];
 
 const App = () => {

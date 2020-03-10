@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import copenhagen from "../images/copenhagen.png";
 import servise from "../images/servise.png";
 import css from "./gifts.less";
@@ -14,12 +15,18 @@ const Gifts = () => {
         <div className={css.logoContainer}>
           <img src={copenhagen} alt="Royal Copenhagen logo" />
         </div>
-        <p className={css.description}>
+        <p className={classNames(css.description, css.notMobile)}>
           Den viktigste gaven for oss er å få samlet venner og familie fra{" "}
           <span>nord</span>, <span>sør</span>, <span>øst</span> og{" "}
           <span>vest</span> på dagen vår. Vi ønsker oss i hovedsak deler av
           Musselmalt Riflet servise fra Royal Copenhagen. Delene av serviset og
           våre andre ønsker finner du samlet i gavelisten under.
+        </p>
+
+        <p className={classNames(css.description, css.onlyMobile)}>
+          Den viktigste gaven for oss er å få samlet venner og familie fra{" "}
+          <span>nord</span>, <span>sør</span>, <span>øst</span> og{" "}
+          <span>vest</span> på dagen vår.
         </p>
       </div>
       <img

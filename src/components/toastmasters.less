@@ -2,6 +2,8 @@
 @import "../less/fonts.less";
 @import "../less/variables.less";
 
+@breakpoint: 900px;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -13,6 +15,12 @@
   justify-content: space-around;
   margin-top: 4rem;
   margin-bottom: 2rem;
+
+  @media all and (max-width: @breakpoint) {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+  }
 }
 
 .description {
@@ -22,10 +30,25 @@
   text-align: center;
   font-size: 1.75rem;
   font-weight: 300;
+
+  @media all and (max-width: @breakpoint) {
+    width: 95%;
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
+  }
 }
 
 .imageContainer {
   position: relative;
+
+  @media all and (max-width: 475px) {
+    transform: scale(0.8);
+  }
+
+  @media all and (max-width: 375px) {
+    transform: scale(0.6);
+  }
 }
 
 .permanentMarker {
@@ -82,6 +105,19 @@
 
   text-decoration: none;
   color: @primaryColor;
+
+  @media all and (max-width: 1100px) {
+    font-size: 1rem;
+  }
+
+  @media all and (max-width: 1100px) {
+    width: 100%;
+    padding-left: 20%;
+  }
+
+  @media all and (max-width: 500px) {
+    padding-left: 10%;
+  }
 
   img {
     width: 30px;

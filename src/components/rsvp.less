@@ -3,18 +3,29 @@
 @import "../less/variables.less";
 
 .outerContainer {
-  min-width: 100%;
+  width: 100%;
+  position: relative;
+  margin-top: @blockSpacing;
+}
+
+.rsvpAndImageContainer {
+  width: 100%;
   height: 32rem;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  margin-top: 15rem;
   overflow: hidden;
+
+  @media all and (max-width: @mobileLarge) {
+    flex-direction: column;
+    overflow: visible;
+    height: auto;
+  }
 }
 
-.container {
+.rsvpContainer {
   height: 100%;
   width: 30%;
   margin-right: 2rem;
@@ -37,6 +48,14 @@
     flex: 1 0 60%;
 
     justify-content: flex-start;
+    @media all and (max-width: @mobileLarge) {
+      width: 100%;
+    }
+  }
+
+  @media all and (max-width: @mobileLarge) {
+    width: 100%;
+    min-height: 30rem;
   }
 }
 
@@ -117,33 +136,49 @@
   color: @secondaryColor;
 
   position: absolute;
-  left: -5.5rem;
-  top: -2rem;
-
-  transform: rotate(-20deg);
+  bottom: -3rem;
+  left: -5rem;
+  transform: rotate(20deg);
 }
 
 .arrow {
+  height: auto;
+
   position: absolute;
   left: -3rem;
-  top: 1rem;
+  bottom: 1rem;
 
-  height: auto;
+  transform: scaleY(-1);
+}
+
+@media all and (max-width: @mobileLarge) {
+  .upsell {
+    top: -2rem;
+    left: 3rem;
+    transform: rotate(0deg);
+    bottom: unset;
+  }
+
+  .arrow {
+    transform: scaleY(1) rotate(30deg);
+    top: -1rem;
+    left: 1rem;
+    bottom: unset;
+  }
 }
 
 .error {
   color: @errorRed;
 }
 
-.elvImageContainer {
-  height: 100%;
-  width: 1000px;
-
-  background-color: red;
-}
-
 .elvImage {
   height: 100%;
+
+  @media all and (max-width: @mobileLarge) {
+    margin-top: 0.8rem;
+    height: unset;
+    width: 100%;
+  }
 }
 
 .formContainer {
@@ -154,11 +189,19 @@
   flex-direction: row;
 
   color: @primaryColor;
+
+  @media all and (max-width: @mobileLarge) {
+    flex-direction: column;
+  }
 }
 
 .formHeader {
   font-size: 1.5rem;
   color: @primaryColor;
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 1rem;
+  }
 }
 
 .form {
@@ -168,8 +211,16 @@
   display: flex;
   flex-direction: column;
 
-  padding: 2rem;
+  padding: 2rem 0;
   box-sizing: border-box;
+
+  @media all and (max-width: @mobileLarge) {
+    width: 100%;
+    padding: 1rem 0;
+    &:last-of-type {
+      padding-bottom: 2rem;
+    }
+  }
 }
 
 .attendingCheckboxAndLabel {
@@ -203,6 +254,10 @@
   padding-left: 2rem;
   height: 100%;
 
+  @media all and (max-width: @mobileLarge) {
+    height: 10rem;
+  }
+
   .menuEntry {
     display: flex;
     flex-direction: column;
@@ -231,8 +286,16 @@
   &:invalid {
     padding-bottom: 0;
   }
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 0.9rem;
+  }
 }
 
 .allergiesInput::placeholder {
   font-size: 1.2rem;
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 0.8rem;
+  }
 }

@@ -11,6 +11,10 @@
   box-sizing: border-box;
   padding: 2rem 5rem 3rem 5rem;
   margin-top: @blockSpacing;
+
+  @media all and (max-width: @mobileLarge) {
+    padding: 2rem 1rem 3rem 1rem;
+  }
 }
 
 .header {
@@ -21,4 +25,8 @@
 
   border-bottom: 1px solid @secondaryColor;
   padding-bottom: 2rem;
+
+  @media all and (max-width: 900px) {
+    font-size: 2rem;
+  }
 }
