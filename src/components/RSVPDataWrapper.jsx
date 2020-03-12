@@ -22,6 +22,7 @@ const RSVPDataWrapper = () => {
   const [attending, setAttending] = useState([]);
   const [allergies, setAllergies] = useState("");
 
+  const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
   const [loadingState, setLoadingState] = useState({
     user: false,
@@ -58,6 +59,7 @@ const RSVPDataWrapper = () => {
           setAttending(data.attending ? data.attending : []);
           setAllergies(data.allergies ? data.allergies : "");
           setLoadingState(prev => ({ ...prev, data: false }));
+          setEditing(!data.responded);
         },
         () => {
           setLoadingState(prev => ({ ...prev, data: false }));
@@ -87,11 +89,13 @@ const RSVPDataWrapper = () => {
         .collection("data")
         .doc(username)
         .set({
+          responded: true,
           names: typeof names === "object" ? names : names,
           attending: typeof attending === "object" ? attending : attending,
           allergies: typeof allergies === "string" ? allergies : allergies
         });
       setSavingState(SavingState.SUCCESS);
+      setEditing(false);
     } else {
       setSavingState(SavingState.FAILED);
     }
@@ -133,6 +137,13 @@ const RSVPDataWrapper = () => {
       signOut={() => auth.signOut()}
       save={save}
       savingState={savingState}
+      editing={editing}
+      setEditing={val => {
+        if (val) {
+          setSavingState(SavingState.NOT_ASKED);
+        }
+        setEditing(val);
+      }}
     />
   );
 };

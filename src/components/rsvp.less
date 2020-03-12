@@ -288,10 +288,11 @@
   background-color: white;
   border: 1px solid @secondaryColor;
 
-  height: 10rem;
+  height: 7rem;
 
   @media all and (max-width: @mobileLarge) {
     font-size: 0.9rem;
+    height: 10rem;
   }
 }
 
@@ -306,8 +307,7 @@
 
 .saveButton {
   width: fit-content;
-  height: 3.5rem;
-  margin-top: 1.75rem;
+  margin-top: 0.5rem;
   margin-left: auto;
 
   font-size: 1.15rem;
@@ -320,9 +320,41 @@
 
   border: none;
 
+  &:focus {
+    outline: none;
+  }
+
   img {
     height: 13px;
     width: 13px;
     margin-left: 5px;
   }
+
+  @media all and (min-width: @mobileLarge) {
+    margin-top: 1rem;
+  }
+}
+
+.attendingListItem {
+  img {
+    width: 14px;
+    height: 14px;
+
+    margin-right: 1rem;
+    margin-left: 2px;
+  }
+
+  margin-top: 1.5rem;
+}
+
+.allergiesHeader {
+  color: @primaryColor;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.allergiesText {
+  color: @secondaryColor;
+  font-size: 0.9rem;
 }

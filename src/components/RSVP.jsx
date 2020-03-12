@@ -5,6 +5,8 @@ import elv from "../images/elv.png";
 import arrow from "../icons/arrow.png";
 import chevron from "../icons/right-chevron.svg";
 import checkmark from "../icons/checkmark.svg";
+import cross from "../icons/cross.svg";
+import editIcon from "../icons/edit.svg";
 import css from "./rsvp.less";
 
 const RSVP = ({
@@ -19,7 +21,9 @@ const RSVP = ({
   error,
   signOut,
   save,
-  savingState
+  savingState,
+  editing,
+  setEditing
 }) => {
   const [code, setCode] = useState("");
   const [cannotAttend, setCannotAttend] = useState(false);
@@ -49,26 +53,38 @@ const RSVP = ({
             <div className={css.loggedInContainer}>
               <div className={css.formContainer}>
                 <div className={css.form}>
-                  <div className={css.formHeader}>Hvem kommer?</div>
-                  {guests.map(({ name, attending }) => (
+                  <div className={css.formHeader}>
+                    {editing ? "Hvem kommer?" : "Disse kommer"}
+                  </div>
+                  {guests.map(({ name, attending }) =>
+                    editing ? (
+                      <GuestCheckboxWithLabel
+                        key={name}
+                        label={name}
+                        checked={attending}
+                        onChange={() => {
+                          updateAttending(name);
+                          setCannotAttend(false);
+                        }}
+                      />
+                    ) : (
+                      <AttendingListItem
+                        key={name}
+                        name={name}
+                        attending={attending}
+                      />
+                    )
+                  )}
+                  {editing && (
                     <GuestCheckboxWithLabel
-                      key={name}
-                      label={name}
-                      checked={attending}
+                      label={"Kan dessverre ikke komme"}
+                      checked={cannotAttend}
                       onChange={() => {
-                        updateAttending(name);
-                        setCannotAttend(false);
+                        clearAttending();
+                        setCannotAttend(true);
                       }}
                     />
-                  ))}
-                  <GuestCheckboxWithLabel
-                    label={"Kan dessverre ikke komme"}
-                    checked={cannotAttend}
-                    onChange={() => {
-                      clearAttending();
-                      setCannotAttend(true);
-                    }}
-                  />
+                  )}
                 </div>
                 <div className={css.form}>
                   <div className={css.menu}>
@@ -90,19 +106,30 @@ const RSVP = ({
                   </div>
                 </div>
               </div>
-              <textarea
-                value={allergies}
-                onChange={event => updateAllergies(event.target.value)}
-                className={classNames(css.allergiesInput)}
-                placeholder="Skriv ned allergier her.."
-                onFocus={e => (e.target.placeholder = "")}
-                onBlur={e =>
-                  (e.target.placeholder = "Skriv ned allergier her..")
-                }
-                required={true}
-              />
+              {editing ? (
+                <textarea
+                  value={allergies}
+                  onChange={event => updateAllergies(event.target.value)}
+                  className={classNames(css.allergiesInput)}
+                  placeholder="Skriv ned allergier her.."
+                  onFocus={e => (e.target.placeholder = "")}
+                  onBlur={e =>
+                    (e.target.placeholder = "Skriv ned allergier her..")
+                  }
+                  required={true}
+                />
+              ) : allergies.length > 0 ? (
+                <div style={{ marginBottom: "auto" }}>
+                  <div className={css.allergiesHeader}>Allergier</div>
+                  <div className={css.allergiesText}>{allergies}</div>
+                </div>
+              ) : null}
 
-              <SaveButton onClick={save} savingState={savingState} />
+              <SaveButton
+                onClick={editing ? save : () => setEditing(true)}
+                savingState={savingState}
+                edit={!editing}
+              />
             </div>
           ) : (
             <>
@@ -170,31 +197,36 @@ const MenuEntry = ({ header, course, signOut }) => (
   </div>
 );
 
-const SaveButton = ({ onClick, savingState }) => {
-  const label =
-    savingState === SavingState.LOADING
-      ? "Lagrer.."
-      : savingState === SavingState.SUCCESS
-      ? "Lagret"
-      : "Lagre";
+const SaveButton = ({ onClick, savingState, edit }) => {
+  const label = edit
+    ? "Endre"
+    : savingState === SavingState.LOADING
+    ? "Lagrer.."
+    : savingState === SavingState.SUCCESS
+    ? "Lagret"
+    : "Lagre";
 
-  const icon =
-    savingState === SavingState.SUCCESS
-      ? checkmark
-      : savingState === SavingState.NOT_ASKED
-      ? chevron
-      : null;
+  const icon = edit
+    ? editIcon
+    : savingState === SavingState.SUCCESS
+    ? checkmark
+    : savingState === SavingState.NOT_ASKED
+    ? chevron
+    : null;
 
   return (
-    <button
-      onClick={onClick}
-      disabled={savingState !== SavingState.NOT_ASKED}
-      className={css.saveButton}
-    >
+    <button onClick={onClick} className={css.saveButton}>
       {label}
       {icon && <img src={icon} alt="" />}
     </button>
   );
 };
+
+const AttendingListItem = ({ name, attending }) => (
+  <div className={css.attendingListItem}>
+    <img src={attending ? checkmark : cross} alt="" />
+    {name}
+  </div>
+);
 
 export default RSVP;
