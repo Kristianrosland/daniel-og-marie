@@ -27,6 +27,7 @@ const App = () => {
         <div className={css.contentContainer}>
           <h1 className={css.header}>Marie & Daniel</h1>
           <p className={css.date}>07.11.2020</p>
+          <div className={css.gifterSeg}>Gifter seg !</div>
 
           <img
             src={svolvaerGeita}

@@ -44,6 +44,49 @@
 
   color: @white;
   border-bottom: 1px solid @white;
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 30px;
+  }
+
+  @media all and (max-width: 340px) {
+    font-size: 26px;
+  }
+}
+
+.gifterSeg {
+  color: @secondaryColor;
+  font-family: @fontPermanentMarker;
+  font-size: 1.25rem;
+  letter-spacing: @letterSpacingLarge;
+
+  position: absolute;
+  top: 4rem;
+  right: 17.5vw;
+  transform: rotate(-20deg);
+
+  @media all and (min-width: 1200px) {
+    right: 25vw;
+  }
+
+  @media all and (max-width: @mobileLarge) {
+    top: 3rem;
+    right: 5vw;
+    font-size: 1.1rem;
+  }
+
+  @media all and (max-width: 700px) {
+    transform: rotate(-7deg);
+    top: 5.5rem;
+    right: 8vw;
+    font-size: 0.8rem;
+  }
+
+  @media all and (max-width: 400px) {
+    transform: rotate(-20deg);
+    top: 5rem;
+    right: 3vw;
+  }
 }
 
 .date {
@@ -52,6 +95,10 @@
 
   font-weight: 300;
   font-size: 20px;
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 15px;
+  }
 }
 
 .headerImage {
