@@ -66,12 +66,18 @@ const RSVP = ({
                           updateAttending(name);
                           setCannotAttend(false);
                         }}
+                        style={
+                          guests.length >= 4 ? { marginTop: "0.7rem" } : {}
+                        }
                       />
                     ) : (
                       <AttendingListItem
                         key={name}
                         name={name}
                         attending={attending}
+                        style={
+                          guests.length >= 4 ? { marginTop: "0.7rem" } : {}
+                        }
                       />
                     )
                   )}
@@ -83,6 +89,7 @@ const RSVP = ({
                         clearAttending();
                         setCannotAttend(true);
                       }}
+                      style={guests.length >= 4 ? { marginTop: "0.7rem" } : {}}
                     />
                   )}
                 </div>
@@ -175,11 +182,12 @@ const RSVP = ({
   );
 };
 
-const GuestCheckboxWithLabel = ({ label, checked, onChange }) => (
+const GuestCheckboxWithLabel = ({ label, checked, onChange, style }) => (
   <div
     key={label}
     className={css.attendingCheckboxAndLabel}
     onClick={() => onChange(label)}
+    style={style}
   >
     <div
       className={classNames(css.attendingCheckbox, {
