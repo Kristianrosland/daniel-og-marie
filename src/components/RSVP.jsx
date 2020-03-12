@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { SavingState } from "./RSVPDataWrapper";
 import classNames from "classnames";
 import elv from "../images/elv.png";
 import arrow from "../icons/arrow.png";
+import chevron from "../icons/right-chevron.svg";
+import checkmark from "../icons/checkmark.svg";
 import css from "./rsvp.less";
 
 const RSVP = ({
@@ -14,7 +17,9 @@ const RSVP = ({
   updateAllergies,
   login,
   error,
-  signOut
+  signOut,
+  save,
+  savingState
 }) => {
   const [code, setCode] = useState("");
   const [cannotAttend, setCannotAttend] = useState(false);
@@ -85,10 +90,10 @@ const RSVP = ({
                   </div>
                 </div>
               </div>
-              <input
+              <textarea
                 value={allergies}
-                onChange={event => updateAllergies(event)}
-                className={classNames(css.inputField, css.allergiesInput)}
+                onChange={event => updateAllergies(event.target.value)}
+                className={classNames(css.allergiesInput)}
                 placeholder="Skriv ned allergier her.."
                 onFocus={e => (e.target.placeholder = "")}
                 onBlur={e =>
@@ -96,6 +101,8 @@ const RSVP = ({
                 }
                 required={true}
               />
+
+              <SaveButton onClick={save} savingState={savingState} />
             </div>
           ) : (
             <>
@@ -162,5 +169,32 @@ const MenuEntry = ({ header, course, signOut }) => (
     <div className={css.courseDescription}>{course}</div>
   </div>
 );
+
+const SaveButton = ({ onClick, savingState }) => {
+  const label =
+    savingState === SavingState.LOADING
+      ? "Lagrer.."
+      : savingState === SavingState.SUCCESS
+      ? "Lagret"
+      : "Lagre";
+
+  const icon =
+    savingState === SavingState.SUCCESS
+      ? checkmark
+      : savingState === SavingState.NOT_ASKED
+      ? chevron
+      : null;
+
+  return (
+    <button
+      onClick={onClick}
+      disabled={savingState !== SavingState.NOT_ASKED}
+      className={css.saveButton}
+    >
+      {label}
+      {icon && <img src={icon} alt="" />}
+    </button>
+  );
+};
 
 export default RSVP;

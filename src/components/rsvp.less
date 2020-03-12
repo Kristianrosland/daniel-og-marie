@@ -278,14 +278,17 @@
 
 .allergiesInput {
   font-size: 1.2rem;
-  letter-spacing: @letterSpacingMedium;
-  padding: 0 2rem;
+  font-family: @fontRoboto;
+  letter-spacing: @letterSpacingLarge;
+  padding: 1rem;
   box-sizing: border-box;
   text-align: left;
 
-  &:invalid {
-    padding-bottom: 0;
-  }
+  color: @secondaryColor;
+  background-color: white;
+  border: 1px solid @secondaryColor;
+
+  height: 10rem;
 
   @media all and (max-width: @mobileLarge) {
     font-size: 0.9rem;
@@ -294,8 +297,32 @@
 
 .allergiesInput::placeholder {
   font-size: 1.2rem;
+  color: @secondaryColor;
 
   @media all and (max-width: @mobileLarge) {
     font-size: 0.8rem;
+  }
+}
+
+.saveButton {
+  width: fit-content;
+  height: 3.5rem;
+  margin-top: 1.75rem;
+  margin-left: auto;
+
+  font-size: 1.15rem;
+  font-family: @fontRoboto;
+  text-transform: uppercase;
+  letter-spacing: @letterSpacingMedium;
+
+  color: @primaryColor;
+  background-color: white;
+
+  border: none;
+
+  img {
+    height: 13px;
+    width: 13px;
+    margin-left: 5px;
   }
 }

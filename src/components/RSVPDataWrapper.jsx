@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import RSVP from "./RSVP";
-import debounce from "lodash.debounce";
 
 import * as firebase from "firebase/app";
 require("firebase/firestore");
@@ -8,7 +7,13 @@ require("firebase/firestore");
 let db;
 let docRef;
 let auth;
-let debouncedFn;
+
+export const SavingState = {
+  NOT_ASKED: "not-asked",
+  LOADING: "loading",
+  FAILED: "failed",
+  SUCCESS: "success"
+};
 
 const RSVPDataWrapper = () => {
   const [user, setUser] = useState(null);
@@ -22,6 +27,7 @@ const RSVPDataWrapper = () => {
     user: false,
     data: false
   });
+  const [savingState, setSavingState] = useState(SavingState.NOT_ASKED);
 
   useEffect(() => {
     if (!db) {
@@ -68,20 +74,27 @@ const RSVPDataWrapper = () => {
       ? attending.filter(n => n !== name)
       : [...attending, name];
 
-    updateFirebase({ attending: updatedAttending });
     setAttending(updatedAttending);
   };
 
-  const updateFirebase = updated => {
-    db.collection("data")
-      .doc(username)
-      .set({
-        attending:
-          typeof updated.attending === "object" ? updated.attending : attending,
-        names: typeof updated.names === "object" ? updated.names : names,
-        allergies:
-          typeof updated.allergies === "string" ? updated.allergies : allergies
-      });
+  const save = async () => {
+    setSavingState(SavingState.LOADING);
+
+    await new Promise(r => setTimeout(r, 1000));
+
+    if (username) {
+      await db
+        .collection("data")
+        .doc(username)
+        .set({
+          names: typeof names === "object" ? names : names,
+          attending: typeof attending === "object" ? attending : attending,
+          allergies: typeof allergies === "string" ? allergies : allergies
+        });
+      setSavingState(SavingState.SUCCESS);
+    } else {
+      setSavingState(SavingState.FAILED);
+    }
   };
 
   const login = async (username, done) => {
@@ -101,19 +114,6 @@ const RSVPDataWrapper = () => {
     }
   };
 
-  const debouncedUpdateAllergies = event => {
-    event.persist();
-
-    if (!debouncedFn) {
-      debouncedFn = debounce(() => {
-        updateFirebase({ allergies: event.target.value });
-      }, 1000);
-    }
-
-    setAllergies(event.target.value);
-    debouncedFn();
-  };
-
   const guests = names.map(name => ({
     name,
     attending: attending.includes(name)
@@ -124,13 +124,15 @@ const RSVPDataWrapper = () => {
       loggedIn={user !== null}
       loading={loadingState.user || loadingState.data}
       updateAttending={updateAttending}
-      clearAttending={() => updateFirebase({ attending: [] })}
+      clearAttending={() => setAttending([])}
       guests={guests}
       allergies={allergies}
-      updateAllergies={debouncedUpdateAllergies}
+      updateAllergies={setAllergies}
       login={login}
       error={error}
       signOut={() => auth.signOut()}
+      save={save}
+      savingState={savingState}
     />
   );
 };
