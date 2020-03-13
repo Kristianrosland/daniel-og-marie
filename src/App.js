@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Toastmasters from "./components/Toastmasters";
 import Gifts from "./components/Gifts";
 import RSVPDataWrapper from "./components/RSVPDataWrapper";
@@ -12,15 +12,36 @@ import svolvaerGeita from "./images/svolvaer.png";
 import css from "./app.less";
 
 const menuItems = [
-  { text: "Kommer du?", ref: null },
-  { text: "Tale?", ref: null },
-  { text: "Program", ref: null },
-  // { text: "Hvem er vi?", ref: null },
-  { text: "Gaveønsker", ref: null }
-  // { text: "FAQ", ref: null }
+  { text: "Kommer du?" },
+  { text: "Tale?" },
+  { text: "Program" },
+  // { text: "Hvem er vi?"  },
+  { text: "Gaveønsker" }
+  // { text: "FAQ"  }
 ];
 
 const App = () => {
+  const rsvpRef = useRef(null);
+  const toastmasterRef = useRef(null);
+  const giftsRef = useRef(null);
+
+  const scrollTo = menuItem => {
+    let ref = null;
+    if (menuItem === "Kommer du?") {
+      ref = rsvpRef;
+    } else if (menuItem === "Tale?") {
+      ref = toastmasterRef;
+    } else if (menuItem === "Program") {
+      // TODO
+    } else if (menuItem === "Gaveønsker") {
+      ref = giftsRef;
+    }
+
+    if (ref && ref.current && ref.current.offsetTop) {
+      window.scrollTo(0, ref.current.offsetTop);
+    }
+  };
+
   return (
     <FirebaseAuthProvider {...config} firebase={firebase}>
       <div className={css.app}>
@@ -37,17 +58,21 @@ const App = () => {
 
           <div className={css.menuBar}>
             {menuItems.map(item => (
-              <span key={item.text} className={css.menuItem}>
+              <span
+                key={item.text}
+                className={css.menuItem}
+                onClick={() => scrollTo(item.text)}
+              >
                 {item.text}
               </span>
             ))}
           </div>
 
-          <RSVPDataWrapper />
+          <RSVPDataWrapper refProp={rsvpRef} />
 
-          <Toastmasters />
+          <Toastmasters refProp={toastmasterRef} />
 
-          <Gifts />
+          <Gifts refProp={giftsRef} />
         </div>
       </div>
     </FirebaseAuthProvider>

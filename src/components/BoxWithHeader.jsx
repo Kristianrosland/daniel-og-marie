@@ -1,9 +1,9 @@
 import React from "react";
 import css from "./box-with-header.less";
 
-const BoxWithHeader = ({ header, children }) => {
+const BoxWithHeader = ({ header, children, refProp }) => {
   return (
-    <div className={css.container}>
+    <div className={css.container} ref={refProp}>
       <div className={css.header}>{header}</div>
       {children}
     </div>

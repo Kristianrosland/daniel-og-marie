@@ -7,9 +7,9 @@ import css from "./gifts.less";
 const gavelisteUrl =
   "https://www.gavelisten.no/list/XRTDTXF/guest?fbclid=IwAR3DIOIo-j4RhixuOIAgiThyuCWQt0Ufe089jjW7qEQqX5EsBDgwd4t42yk";
 
-const Gifts = () => {
+const Gifts = ({ refProp }) => {
   return (
-    <div className={css.container}>
+    <div className={css.container} ref={refProp}>
       <div className={css.header}>Gaveønsker</div>
       <div className={css.topContainer}>
         <div className={css.logoContainer}>

@@ -10,6 +10,7 @@ import editIcon from "../icons/edit.svg";
 import css from "./rsvp.less";
 
 const RSVP = ({
+  refProp,
   loggedIn,
   loading,
   updateAttending,
@@ -41,7 +42,7 @@ const RSVP = ({
   };
 
   return (
-    <div className={css.outerContainer}>
+    <div className={css.outerContainer} ref={refProp}>
       <div className={css.rsvpAndImageContainer}>
         <div
           className={classNames(css.rsvpContainer, {

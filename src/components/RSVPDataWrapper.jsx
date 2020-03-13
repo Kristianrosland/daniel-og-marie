@@ -15,7 +15,7 @@ export const SavingState = {
   SUCCESS: "success"
 };
 
-const RSVPDataWrapper = () => {
+const RSVPDataWrapper = ({ refProp }) => {
   const [user, setUser] = useState(null);
   const [username, setUsername] = useState("");
   const [names, setNames] = useState([]);
@@ -125,6 +125,7 @@ const RSVPDataWrapper = () => {
 
   return (
     <RSVP
+      refProp={refProp}
       loggedIn={user !== null}
       loading={loadingState.user || loadingState.data}
       updateAttending={updateAttending}

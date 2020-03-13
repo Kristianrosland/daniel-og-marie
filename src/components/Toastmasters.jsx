@@ -9,9 +9,9 @@ import fb from "../icons/fb.png";
 import ig from "../icons/ig.png";
 import classnames from "classnames";
 
-const Toastmasters = () => {
+const Toastmasters = ({ refProp }) => {
   return (
-    <BoxWithHeader header="The Toastmasters">
+    <BoxWithHeader header="The Toastmasters" refProp={refProp}>
       <div className={css.container}>
         <div className={css.topContainer}>
           <div className={css.description}>
