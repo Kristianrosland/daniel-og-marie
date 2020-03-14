@@ -1,0 +1,89 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.container {
+  margin: @blockSpacing 0 0 0;
+  width: 100%;
+}
+
+.textContainer {
+  padding: 0 1.5rem;
+  border-left: 1px solid @secondaryColor;
+}
+
+.header {
+  font-family: @fontPermanentMarker;
+  font-size: 1.5rem;
+  color: @secondaryColor;
+
+  span {
+    color: white;
+  }
+}
+
+.text {
+  color: white;
+  @media all and(max-width: @mobileLarge) {
+    font-size: 0.85rem;
+  }
+}
+
+.viGlederOss {
+  font-family: @fontPermanentMarker;
+  font-size: 1.5rem;
+  color: @secondaryColor;
+
+  margin-left: auto;
+  width: fit-content;
+
+  margin-top: 0.5rem;
+  @media all and(max-width: @mobileLarge) {
+    font-size: 1rem;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.imageContainerColumn {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+
+  &:first-of-type {
+    padding-right: 0.5rem;
+  }
+
+  &:last-of-type {
+    padding-left: 0.5rem;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+
+  .bunad  {
+    max-height: 45rem;
+
+    @media all and (max-width: @mobileLarge) {
+      max-height: 25rem;
+    }
+    @media all and (max-width: 700px) {
+      max-height: 20rem;
+    }
+    @media all and (max-width: 570px) {
+      max-height: 15rem;
+    }
+    @media all and (max-width: 440px) {
+      max-height: 12.5rem;
+    }
+  }
+}

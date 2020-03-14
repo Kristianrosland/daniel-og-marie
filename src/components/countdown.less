@@ -1,0 +1,21 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.container {
+  font-size: 1.4rem;
+  color: white;
+
+  margin: 2rem auto 0 auto;
+  letter-spacing: @letterSpacingLarge;
+
+  span {
+    color: @secondaryColor;
+    margin-right: 0.5rem;
+  }
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+}

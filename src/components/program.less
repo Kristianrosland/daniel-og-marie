@@ -1,0 +1,128 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.eventList {
+  padding-bottom: 1.25rem;
+
+  @media all and (max-width: @mobileLarge) {
+    border-bottom: 1px solid @secondaryColor;
+  }
+}
+
+.event {
+  width: 100%;
+  text-align: center;
+
+  margin-top: 1.25rem;
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 0.8rem;
+  }
+}
+
+.menuContainer {
+  padding: 1.25rem;
+  border-bottom: 1px solid @secondaryColor;
+
+  @media all and (min-width: @mobileLarge) {
+    border-bottom: none;
+    border-right: 2px solid @secondaryColor;
+
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.menuHeader {
+  font-size: 0.7rem;
+  text-align: center;
+  color: @primaryColor;
+  margin-top: 1.25rem;
+
+  @media all and (min-width: @mobileLarge) {
+    text-align: right;
+    margin-top: 0.5rem;
+  }
+}
+
+.menuDescription {
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  text-align: center;
+  color: black;
+
+  line-height: 0.9rem;
+
+  &:last-of-type {
+    margin-bottom: 1.25rem;
+  }
+
+  @media all and (min-width: @mobileLarge) {
+    text-align: right;
+    max-width: 15rem;
+    margin-left: auto;
+  }
+}
+
+.linksAndMenuContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+
+  @media all and (max-width: @mobileLarge) {
+    flex-direction: column-reverse;
+  }
+}
+
+.links {
+  margin-top: auto;
+
+  @media all and (max-width: @mobileLarge) {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 2rem;
+
+    max-width: 30rem;
+  }
+
+  @media all and (max-width: 400px) {
+    flex-direction: column;
+  }
+}
+
+.link {
+  margin-top: 1.25rem;
+
+  &:not(:last-of-type) {
+    margin-right: 3rem;
+  }
+
+  img {
+    height: 16px;
+    margin-bottom: -2px;
+    margin-right: 1rem;
+
+    @media all and (max-width: @mobileLarge) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  @media all and (max-width: 500px) {
+    font-size: 0.8rem;
+    img {
+      height: 12px;
+    }
+  }
+
+  @media all and (max-width: 400px) {
+    margin-right: 0 !important;
+  }
+
+  a {
+    color: @secondaryColor;
+  }
+}

@@ -21,7 +21,10 @@ const Toastmasters = ({ refProp }) => {
             <br />
             <br />
             <br />
-            Siri Kjøren og Kristian Hartmann
+            Siri og Kristian
+            <div className={css.nicknameDescription}>
+              (bedre kjent av familien Rosland som advokaten og psykologen)
+            </div>
           </div>
 
           <div className={css.imageContainer}>

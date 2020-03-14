@@ -1,0 +1,142 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.app {
+  background-color: @primaryColor;
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 1% 10% @blockSpacing 10%;
+  box-sizing: border-box;
+
+  font-family: @fontRoboto;
+  letter-spacing: @letterSpacingMedium;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  @media all and (max-width: 1100px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.container {
+  width: 30rem;
+  max-width: 100%;
+}
+
+.loader {
+  margin: auto;
+}
+
+.list {
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.searchInput {
+  width: 100%;
+  box-sizing: border-box;
+  height: 2rem;
+  padding-left: 1rem;
+}
+
+.listItem {
+  margin-top: 1rem;
+  background-color: white;
+  min-height: 3rem;
+  padding: 0.5rem;
+}
+
+.invCode {
+  color: @primaryColor;
+  font-size: 0.75rem;
+}
+
+.namesListAndIcon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.namesList {
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+
+  .name {
+    font-size: 0.8rem;
+    &:not(:last-of-type) {
+      margin-bottom: 0.2rem;
+    }
+
+    img {
+      width: 10px;
+      margin-right: 0.75rem;
+    }
+  }
+}
+
+.statusIcon {
+  margin-top: auto;
+  margin-bottom: auto;
+
+  img {
+    height: 30px;
+    margin-right: 1rem;
+  }
+}
+
+.strikeThrough {
+  text-decoration: line-through;
+}
+
+.signOut {
+  width: 10rem;
+  height: 2rem;
+  margin-top: 1rem;
+
+  border: none;
+  color: white;
+  background-color: @secondaryColor;
+}
+
+.statsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.statsBox {
+  display: flex;
+  flex-direction: column;
+
+  &:first-of-type {
+    border-right: 1px solid @secondaryColor;
+  }
+
+  &:last-of-type {
+    border-left: 1px solid @secondaryColor;
+  }
+  margin-bottom: 2rem;
+}
+
+.statsHeader {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.statsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1rem;
+
+  font-size: 2.5rem;
+  color: white;
+}

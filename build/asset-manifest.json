@@ -1,30 +1,37 @@
 {
   "files": {
-    "main.css": "/static/css/main.5867da0d.chunk.css",
-    "main.js": "/static/js/main.33b22c94.chunk.js",
-    "main.js.map": "/static/js/main.33b22c94.chunk.js.map",
+    "main.css": "/static/css/main.e29590db.chunk.css",
+    "main.js": "/static/js/main.4964cb8e.chunk.js",
+    "main.js.map": "/static/js/main.4964cb8e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.36931019.js",
     "runtime-main.js.map": "/static/js/runtime-main.36931019.js.map",
-    "static/js/2.46f327b6.chunk.js": "/static/js/2.46f327b6.chunk.js",
-    "static/js/2.46f327b6.chunk.js.map": "/static/js/2.46f327b6.chunk.js.map",
+    "static/js/2.819af26e.chunk.js": "/static/js/2.819af26e.chunk.js",
+    "static/js/2.819af26e.chunk.js.map": "/static/js/2.819af26e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.33a1b9ee0c24704f50bd01e49b382cbb.js": "/precache-manifest.33a1b9ee0c24704f50bd01e49b382cbb.js",
+    "precache-manifest.701163dc3f2a70ebc6a8c3513d07c32c.js": "/precache-manifest.701163dc3f2a70ebc6a8c3513d07c32c.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.5867da0d.chunk.css.map": "/static/css/main.5867da0d.chunk.css.map",
-    "static/js/2.46f327b6.chunk.js.LICENSE.txt": "/static/js/2.46f327b6.chunk.js.LICENSE.txt",
+    "static/css/main.e29590db.chunk.css.map": "/static/css/main.e29590db.chunk.css.map",
+    "static/js/2.819af26e.chunk.js.LICENSE.txt": "/static/js/2.819af26e.chunk.js.LICENSE.txt",
+    "static/media/bunad.png": "/static/media/bunad.55f0d281.png",
     "static/media/checkmark.svg": "/static/media/checkmark.5fae9f58.svg",
+    "static/media/closed-envelope.svg": "/static/media/closed-envelope.bbb3f07d.svg",
     "static/media/cross.svg": "/static/media/cross.e660df7c.svg",
     "static/media/edit.svg": "/static/media/edit.c4408d74.svg",
     "static/media/elv.png": "/static/media/elv.17a97326.png",
+    "static/media/klatring.png": "/static/media/klatring.026ccbfd.png",
+    "static/media/location-pin.svg": "/static/media/location-pin.107f0bb1.svg",
+    "static/media/open-envelope.svg": "/static/media/open-envelope.bb60cfd7.svg",
+    "static/media/riddere.png": "/static/media/riddere.18636af2.png",
     "static/media/right-chevron.svg": "/static/media/right-chevron.75bd23f0.svg",
     "static/media/servise.png": "/static/media/servise.6560ebb7.png",
+    "static/media/solbriller.png": "/static/media/solbriller.684f5aa2.png",
     "static/media/svolvaer.png": "/static/media/svolvaer.f52cb24d.png",
     "static/media/toastmasters.png": "/static/media/toastmasters.837612e7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.36931019.js",
-    "static/js/2.46f327b6.chunk.js",
-    "static/css/main.5867da0d.chunk.css",
-    "static/js/main.33b22c94.chunk.js"
+    "static/js/2.819af26e.chunk.js",
+    "static/css/main.e29590db.chunk.css",
+    "static/js/main.4964cb8e.chunk.js"
   ]
 }
