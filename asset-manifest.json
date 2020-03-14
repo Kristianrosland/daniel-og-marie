@@ -1,30 +1,35 @@
 {
   "files": {
-    "main.css": "/static/css/main.6e0c91e4.chunk.css",
-    "main.js": "/static/js/main.a56c7816.chunk.js",
-    "main.js.map": "/static/js/main.a56c7816.chunk.js.map",
+    "main.css": "/static/css/main.bee5e717.chunk.css",
+    "main.js": "/static/js/main.87dd3587.chunk.js",
+    "main.js.map": "/static/js/main.87dd3587.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.36931019.js",
     "runtime-main.js.map": "/static/js/runtime-main.36931019.js.map",
-    "static/js/2.dc8812de.chunk.js": "/static/js/2.dc8812de.chunk.js",
-    "static/js/2.dc8812de.chunk.js.map": "/static/js/2.dc8812de.chunk.js.map",
+    "static/js/2.3b2ac501.chunk.js": "/static/js/2.3b2ac501.chunk.js",
+    "static/js/2.3b2ac501.chunk.js.map": "/static/js/2.3b2ac501.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ad42ac9fa650f316e887e8370da62ede.js": "/precache-manifest.ad42ac9fa650f316e887e8370da62ede.js",
+    "precache-manifest.44bd6e012ac3528695fe4c5d13395889.js": "/precache-manifest.44bd6e012ac3528695fe4c5d13395889.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.6e0c91e4.chunk.css.map": "/static/css/main.6e0c91e4.chunk.css.map",
-    "static/js/2.dc8812de.chunk.js.LICENSE.txt": "/static/js/2.dc8812de.chunk.js.LICENSE.txt",
+    "static/css/main.bee5e717.chunk.css.map": "/static/css/main.bee5e717.chunk.css.map",
+    "static/js/2.3b2ac501.chunk.js.LICENSE.txt": "/static/js/2.3b2ac501.chunk.js.LICENSE.txt",
+    "static/media/bunad.png": "/static/media/bunad.55f0d281.png",
     "static/media/checkmark.svg": "/static/media/checkmark.5fae9f58.svg",
     "static/media/cross.svg": "/static/media/cross.e660df7c.svg",
     "static/media/edit.svg": "/static/media/edit.c4408d74.svg",
     "static/media/elv.png": "/static/media/elv.17a97326.png",
+    "static/media/klatring.png": "/static/media/klatring.026ccbfd.png",
+    "static/media/location-pin.svg": "/static/media/location-pin.107f0bb1.svg",
+    "static/media/riddere.png": "/static/media/riddere.18636af2.png",
     "static/media/right-chevron.svg": "/static/media/right-chevron.75bd23f0.svg",
     "static/media/servise.png": "/static/media/servise.6560ebb7.png",
+    "static/media/solbriller.png": "/static/media/solbriller.684f5aa2.png",
     "static/media/svolvaer.png": "/static/media/svolvaer.f52cb24d.png",
     "static/media/toastmasters.png": "/static/media/toastmasters.837612e7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.36931019.js",
-    "static/js/2.dc8812de.chunk.js",
-    "static/css/main.6e0c91e4.chunk.css",
-    "static/js/main.a56c7816.chunk.js"
+    "static/js/2.3b2ac501.chunk.js",
+    "static/css/main.bee5e717.chunk.css",
+    "static/js/main.87dd3587.chunk.js"
   ]
 }
