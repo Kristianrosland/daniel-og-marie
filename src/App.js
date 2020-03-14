@@ -54,7 +54,7 @@ const App = () => {
     }
   };
 
-  const showAdmin = window.location.href.includes("/admin");
+  const showAdmin = window.location.href.includes("admin");
 
   return (
     <FirebaseAuthProvider {...config} firebase={firebase}>
@@ -91,11 +91,11 @@ const App = () => {
 
             <Toastmasters refProp={toastmasterRef} />
 
+            <Program refProp={programRef} />
+
             <OmBrudeparet refProp={omBrudeparetRef} />
 
             <Gifts refProp={giftsRef} />
-
-            <Program refProp={programRef} />
           </div>
         </div>
       )}

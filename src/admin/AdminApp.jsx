@@ -15,12 +15,19 @@ require("firebase/firestore");
 let db;
 let auth;
 
+const FILTERS = {
+  UNOPENED: "unopened",
+  OPENED: "opened"
+};
+
 const AdminApp = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [invites, setInvites] = useState({});
   const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState(null);
+  const [seeAllergies, setSeeAllergies] = useState(false);
 
   useEffect(() => {
     if (!db) {
@@ -39,6 +46,7 @@ const AdminApp = () => {
 
         setUser(user);
         setLoading(false);
+        window.scrollTo(0, 0);
       });
     }
   }, []);
@@ -73,49 +81,23 @@ const AdminApp = () => {
         }))
       : [];
 
-  const filteredRSVPs =
+  let filteredRSVPs =
     search.length > 0
       ? RSVPs.filter(
           r =>
             r.names.some(name =>
-              name.toLowerCase().startsWith(search.toLowerCase())
+              name.toLowerCase().includes(search.toLowerCase())
             ) || r.invitationCode.toLowerCase().startsWith(search.toLowerCase())
         )
       : RSVPs;
 
-  /*
-  const dryRun = false;
-  const upload = async () => {
-    for (const [code, names] of Object.entries(guests)) {
-      if (dryRun) {
-        console.log(code, names);
-        continue;
-      }
-
-      try {
-        const email = `${code}@marieogdaniel.no`;
-        const pw = `000-${code}`;
-        await firebase.auth().signInWithEmailAndPassword(email, pw);
-        console.log("Logga inn på bruker");
-
-        await db.doc(code).set({
-          names: names,
-          attending: [],
-          allergies: ""
-        });
-
-        await firebase.auth().signOut();
-        console.log("Logga ut \n");
-
-        console.log("Ferdig med ", code);
-      } catch (err) {
-        console.log("Noe gikk galt med ", code);
-        console.log(err);
-      }
+  if (filter) {
+    if (filter === FILTERS.UNOPENED) {
+      filteredRSVPs = filteredRSVPs.filter(r => !r.responded);
+    } else if (filter === FILTERS.OPENED) {
+      filteredRSVPs = filteredRSVPs.filter(r => r.responded);
     }
-  };
-  <button onClick={upload}> Last opp</button>
-  */
+  }
 
   return (
     <div className={css.app}>
@@ -158,15 +140,70 @@ const AdminApp = () => {
                 }
               />
             </div>
-            <input
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              className={css.searchInput}
-              placeholder="Søk på navn eller kode.."
-            />
-            {filteredRSVPs.map(rsvp => (
-              <RSVPListItem key={rsvp.invitationCode} rsvp={rsvp} />
-            ))}
+            <form className={css.filters}>
+              <input
+                type="checkbox"
+                checked={filter === FILTERS.OPENED}
+                onChange={() => {}}
+              />
+              <span
+                onClick={() =>
+                  setFilter(filter === FILTERS.OPENED ? null : FILTERS.OPENED)
+                }
+              >
+                Åpna
+              </span>
+              <input
+                type="checkbox"
+                checked={filter === FILTERS.UNOPENED}
+                onChange={() => {}}
+              />
+              <span
+                onClick={() =>
+                  setFilter(
+                    filter === FILTERS.UNOPENED ? null : FILTERS.UNOPENED
+                  )
+                }
+              >
+                Uåpna
+              </span>
+            </form>
+
+            <form className={css.filters}>
+              <input
+                type="checkbox"
+                checked={seeAllergies}
+                onChange={() => {}}
+              />
+              <span onClick={() => setSeeAllergies(!seeAllergies)}>
+                Se allergier
+              </span>
+            </form>
+
+            {seeAllergies ? (
+              <div className={css.allergiesList}>
+                {filteredRSVPs
+                  .filter(r => r.allergies && r.allergies.length > 0)
+                  .map(rsvp => (
+                    <div className={css.allergy}>
+                      {rsvp.names.join(", ")}
+                      <div>{rsvp.allergies}</div>
+                    </div>
+                  ))}
+              </div>
+            ) : (
+              <>
+                <input
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
+                  className={css.searchInput}
+                  placeholder="Søk på navn eller kode.."
+                />
+                {filteredRSVPs.map(rsvp => (
+                  <RSVPListItem key={rsvp.invitationCode} rsvp={rsvp} />
+                ))}
+              </>
+            )}
             <button
               className={css.signOut}
               onClick={() => firebase.auth().signOut()}
