@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.3058f3fc.chunk.css",
-    "main.js": "/static/js/main.e9d80c98.chunk.js",
-    "main.js.map": "/static/js/main.e9d80c98.chunk.js.map",
+    "main.css": "/static/css/main.8d88e770.chunk.css",
+    "main.js": "/static/js/main.6bad9337.chunk.js",
+    "main.js.map": "/static/js/main.6bad9337.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.36931019.js",
     "runtime-main.js.map": "/static/js/runtime-main.36931019.js.map",
-    "static/js/2.80004830.chunk.js": "/static/js/2.80004830.chunk.js",
-    "static/js/2.80004830.chunk.js.map": "/static/js/2.80004830.chunk.js.map",
+    "static/js/2.6269335c.chunk.js": "/static/js/2.6269335c.chunk.js",
+    "static/js/2.6269335c.chunk.js.map": "/static/js/2.6269335c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.aee029f9fae43242076cf8aca3f8933e.js": "/precache-manifest.aee029f9fae43242076cf8aca3f8933e.js",
+    "precache-manifest.c16fd3e68d02de8e0797278c2a8516da.js": "/precache-manifest.c16fd3e68d02de8e0797278c2a8516da.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.3058f3fc.chunk.css.map": "/static/css/main.3058f3fc.chunk.css.map",
-    "static/js/2.80004830.chunk.js.LICENSE.txt": "/static/js/2.80004830.chunk.js.LICENSE.txt",
+    "static/css/main.8d88e770.chunk.css.map": "/static/css/main.8d88e770.chunk.css.map",
+    "static/js/2.6269335c.chunk.js.LICENSE.txt": "/static/js/2.6269335c.chunk.js.LICENSE.txt",
     "static/media/bunad.png": "/static/media/bunad.55f0d281.png",
     "static/media/checkmark.svg": "/static/media/checkmark.5fae9f58.svg",
     "static/media/closed-envelope.svg": "/static/media/closed-envelope.bbb3f07d.svg",
@@ -19,7 +19,9 @@
     "static/media/edit.svg": "/static/media/edit.c4408d74.svg",
     "static/media/elv.png": "/static/media/elv.17a97326.png",
     "static/media/klatring.png": "/static/media/klatring.026ccbfd.png",
+    "static/media/kristian.png": "/static/media/kristian.a143a2d8.png",
     "static/media/location-pin.svg": "/static/media/location-pin.107f0bb1.svg",
+    "static/media/myra.svg": "/static/media/myra.cd33b5b9.svg",
     "static/media/open-envelope.svg": "/static/media/open-envelope.bb60cfd7.svg",
     "static/media/riddere.png": "/static/media/riddere.18636af2.png",
     "static/media/right-chevron.svg": "/static/media/right-chevron.75bd23f0.svg",
@@ -30,8 +32,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.36931019.js",
-    "static/js/2.80004830.chunk.js",
-    "static/css/main.3058f3fc.chunk.css",
-    "static/js/main.e9d80c98.chunk.js"
+    "static/js/2.6269335c.chunk.js",
+    "static/css/main.8d88e770.chunk.css",
+    "static/js/main.6bad9337.chunk.js"
   ]
 }
