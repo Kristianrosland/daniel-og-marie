@@ -4,8 +4,53 @@
 
 .container {
   width: 100%;
-  height: 10rem;
-  background-color: green;
-
   margin-top: @blockSpacing;
+}
+
+.faqList {
+  list-style-type: none;
+  margin-bottom: 7rem;
+}
+
+.faq {
+  display: flex;
+  height: 50px;
+  color: white;
+  letter-spacing: 4px;
+}
+
+.faq .questionContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.faq .answer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.question {
+  width: 100%;
+  text-align: right;
+}
+
+.questionContainer::after {
+  width: 2px;
+  background-color: #ffbc6b;
+  height: 100%;
+  content: "";
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.faq:last-child .questionContainer::after {
+  height: 200px;
+}
+
+.contactInformation {
+  text-align: center;
+  color: #ffbc6b;
 }
