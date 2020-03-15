@@ -21,6 +21,10 @@ html {
   justify-content: center;
   overflow: hidden;
 
+  @media all and (max-width: @mobileLarge) {
+    padding-bottom: @mobileBlockSpacing;
+  }
+
   @media all and (max-width: 1100px) {
     padding-left: 5%;
     padding-right: 5%;
