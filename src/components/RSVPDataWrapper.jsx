@@ -55,6 +55,11 @@ const RSVPDataWrapper = ({ refProp }) => {
       docRef.doc(invitationCode).onSnapshot(
         doc => {
           const data = doc.data();
+
+          if (!data) {
+            return;
+          }
+
           setNames(data.names ? data.names : []);
           setAttending(data.attending ? data.attending : []);
           setAllergies(data.allergies ? data.allergies : "");

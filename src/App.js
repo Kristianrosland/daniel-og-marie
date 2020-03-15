@@ -6,6 +6,8 @@ import RSVPDataWrapper from "./components/RSVPDataWrapper";
 import Countdown from "./components/Countdown";
 import Program from "./components/Program";
 import OmBrudeparet from "./components/OmBrudeparet";
+import Forlovere from "./components/Forlovere";
+import FAQ from "./components/FAQ";
 import AdminApp from "./admin/AdminApp";
 
 import { FirebaseAuthProvider } from "@react-firebase/auth";
@@ -22,10 +24,10 @@ import css from "./app.less";
 const menuItems = [
   { text: "Kommer du?" },
   { text: "Tale?" },
-  { text: "Program" },
   { text: "Hvem er vi?" },
-  { text: "Gaveønsker" }
-  // { text: "FAQ"  }
+  { text: "Program" },
+  { text: "Gaveønsker" },
+  { text: "FAQ" }
 ];
 
 const App = () => {
@@ -34,6 +36,7 @@ const App = () => {
   const giftsRef = useRef(null);
   const programRef = useRef(null);
   const omBrudeparetRef = useRef(null);
+  const faqRef = useRef(null);
 
   const scrollTo = menuItem => {
     let ref = null;
@@ -47,6 +50,8 @@ const App = () => {
       ref = omBrudeparetRef;
     } else if (menuItem === "Gaveønsker") {
       ref = giftsRef;
+    } else if (menuItem === "FAQ") {
+      ref = faqRef;
     }
 
     if (ref && ref.current && ref.current.offsetTop) {
@@ -91,11 +96,15 @@ const App = () => {
 
             <Toastmasters refProp={toastmasterRef} />
 
-            <Program refProp={programRef} />
-
             <OmBrudeparet refProp={omBrudeparetRef} />
 
+            <Forlovere />
+
+            <Program refProp={programRef} />
+
             <Gifts refProp={giftsRef} />
+
+            <FAQ refProp={faqRef} />
           </div>
         </div>
       )}

@@ -1,0 +1,82 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.container {
+  display: flex;
+  flex-direction: row;
+
+  @media all and (max-width: @mobileLarge) {
+    flex-direction: column;
+  }
+
+  margin-top: 5rem;
+}
+
+.forloverContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 50%;
+  color: white;
+  line-height: 1.3rem;
+
+  @media all and (max-width: @mobileLarge) {
+    width: 100%;
+  }
+
+  span {
+    color: @secondaryColor;
+  }
+
+  &:first-of-type {
+    padding-right: 2.5rem;
+    @media all and (max-width: @mobileLarge) {
+      padding: 0;
+    }
+  }
+
+  &:last-of-type {
+    border-left: 1px solid @secondaryColor;
+    padding-left: 2.5rem;
+
+    @media all and (max-width: @mobileLarge) {
+      border: none;
+      padding-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    margin-top: 1rem;
+  }
+}
+
+.header {
+  font-size: 1.5rem;
+  font-family: @fontPermanentMarker;
+  color: @secondaryColor;
+
+  margin-bottom: 1rem;
+}
+
+.heart {
+  font-family: @fontPermanentMarker;
+}
+
+.bestManLine {
+  @media all and (max-width: @mobileLarge) {
+    margin: 1.5rem 0;
+  }
+}
+
+.bestMan {
+  display: inline-block;
+  margin-top: 0.25rem;
+
+  font-family: @fontPermanentMarker;
+  font-size: 1.5rem;
+}
