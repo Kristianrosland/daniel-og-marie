@@ -9,12 +9,24 @@ const Forlovere = () => {
       <div className={css.forloverContainer}>
         <div>
           <div className={css.header}>Våre kjære forlovere!</div>
-          Brudens forlovere er hennes gode veninner <span>Marie</span> og{" "}
-          <span>Heidi</span>. Trioen ble dannet på NTNU og har holdt sammen
-          siden første skoledag i Trondheim. De tok opptakskravet (Myra) til
-          studentforeningen sammen, og har i ettertid alltid kalt seg «Team
-          Myra». Trioen har bodd sammen, reist på turer og funnet på mye artig
-          sprell. Takk for at dere er her
+          Brudens forlovere er hennes gode veninner{" "}
+          <a
+            href={"https://www.facebook.com/marie.nesheim?ref=br_rs"}
+            target="__blank"
+          >
+            Marie
+          </a>{" "}
+          og{" "}
+          <a
+            href={"https://www.facebook.com/hholte1?ref=br_rs"}
+            target="__blank"
+          >
+            Heidi
+          </a>
+          . Trioen ble dannet på NTNU og har holdt sammen siden første skoledag
+          i Trondheim. De tok opptakskravet (Myra) til studentforeningen sammen,
+          og har i ettertid alltid kalt seg «Team Myra». Trioen har bodd sammen,
+          reist på turer og funnet på mye artig sprell. Takk for at dere er her
           <span className={css.heart}>{"<3"}</span>
         </div>
         <img src={myra} alt="Forloverne til Marie" />
@@ -22,11 +34,17 @@ const Forlovere = () => {
 
       <div className={css.forloverContainer}>
         <div>
-          Brudgommens forlover er bror og kompis <span>Kristian</span>. De to
-          har alltid delt interesser, hobbier, venner og verdier. Sammen har de
-          drevet med alt fra krabbefangst og hyttebygging til dataspilling,
-          problemløsing og programmering. Det er nevneverdig at Kristian har
-          programmert lesende nettside.
+          Brudgommens forlover er bror og kompis{" "}
+          <a
+            href={"https://www.facebook.com/kristianrosland1.0?ref=br_rs"}
+            target="__blank"
+          >
+            Kristian
+          </a>
+          . De to har alltid delt interesser, hobbier, venner og verdier. Sammen
+          har de drevet med alt fra krabbefangst og hyttebygging til
+          dataspilling, problemløsing og programmering. Det er nevneverdig at
+          Kristian har programmert lesende nettside.
           <br />
           <br />
           En storebror som dirigerer og en lillebror som gjør som han blir

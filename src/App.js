@@ -55,7 +55,7 @@ const App = () => {
     }
 
     if (ref && ref.current && ref.current.offsetTop) {
-      window.scrollTo(0, ref.current.offsetTop);
+      window.scrollTo(0, ref.current.offsetTop - 15);
     }
   };
 
@@ -70,13 +70,12 @@ const App = () => {
           <div className={css.contentContainer}>
             <h1 className={css.header}>Marie & Daniel</h1>
             <p className={css.date}>07.11.2020</p>
-            <div className={css.gifterSeg}>Gifter seg !</div>
+            <div className={css.gifterSeg}>Gifter seg!</div>
 
-            <img
-              src={svolvaerGeita}
-              alt="Daniel og Marie på svolværgeita"
-              className={css.headerImage}
-            />
+            <div className={css.headerImageContainer}>
+              <div className={css.hashtag}>#marieogdaniel2020</div>
+              <img src={svolvaerGeita} alt="Daniel og Marie på svolværgeita" />
+            </div>
 
             <div className={css.menuBar}>
               {menuItems.map(item => (

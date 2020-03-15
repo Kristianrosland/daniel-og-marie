@@ -59,7 +59,7 @@ const Program = ({ refProp }) => {
           <div className={css.menuContainer}>
             <div className={css.menuHeader}>Forrett</div>
             <div className={css.menuDescription}>
-              Kveite ceviche, koriander-mulsjon og sesamknekkis
+              Kveite ceviche med gulbete, korianderemulsjon og sesamknekkis
             </div>
             <div className={css.menuHeader}>Hovedrett</div>
             <div className={css.menuDescription}>

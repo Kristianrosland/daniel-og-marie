@@ -9,11 +9,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "autoprefixer": "^9.7.4",
     "classnames": "^2.2.6",
     "craco-less": "^1.16.0",
     "firebase": "^7.10.0",
     "gh-pages": "^2.2.0",
     "luxon": "^1.22.0",
+    "postcss-cli": "^7.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
@@ -32,9 +34,10 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      "defaults",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "since 2010"
     ],
     "development": [
       "last 1 chrome version",

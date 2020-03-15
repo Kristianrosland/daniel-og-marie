@@ -43,6 +43,10 @@
   transition: all 0.5s ease-in-out;
   position: relative;
 
+  @media all and (min-width: @mobileLarge) and (max-width: 1500px) {
+    flex: 1 0 40%;
+  }
+
   &.expanded {
     width: 70%;
     flex: 1 0 60%;
@@ -82,6 +86,7 @@
 .description  {
   text-align: center;
   font-size: 1.25rem;
+  width: 100%;
 
   div:first-of-type {
     color: @secondaryColor;
@@ -96,6 +101,7 @@
 .inputAndErrorContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .inputField {
@@ -113,7 +119,7 @@
   box-sizing: border-box;
 
   &:invalid {
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
   }
 
   &:focus {
@@ -127,6 +133,8 @@
   font-size: 1.5rem;
   letter-spacing: @letterSpacingLarge;
   color: @white;
+
+  line-height: 4rem;
 }
 
 .upsell {
@@ -151,7 +159,7 @@
   transform: scaleY(-1);
 }
 
-@media all and (max-width: @mobileLarge) {
+@media all and (max-width: 1100px) {
   .upsell {
     top: -2rem;
     left: 3rem;
@@ -359,4 +367,17 @@
 .allergiesText {
   color: @secondaryColor;
   font-size: 0.9rem;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  opacity: 70%;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 100%;
+  }
 }

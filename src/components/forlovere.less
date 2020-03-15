@@ -3,6 +3,7 @@
 @import "../less/variables.less";
 
 .container {
+  width: 100%;
   display: flex;
   flex-direction: row;
 
@@ -21,9 +22,15 @@
   width: 50%;
   color: white;
   line-height: 1.3rem;
+  box-sizing: border-box;
 
   @media all and (max-width: @mobileLarge) {
     width: 100%;
+  }
+
+  a {
+    color: @secondaryColor;
+    text-decoration: none;
   }
 
   span {
