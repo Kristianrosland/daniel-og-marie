@@ -17,21 +17,30 @@
 
 .faqList {
   list-style-type: none;
-  margin-bottom: 7rem;
+  padding-left: 0;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
 }
 
 .faq {
   display: flex;
-  height: 70px;
+  min-height: 80px;
   color: white;
   letter-spacing: 1px;
   font-weight: 200;
+  font-size: 0.8rem;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.questionContainer,
+.answer {
+  display: flex;
+  width: 20rem;
 }
 
 .questionContainer {
-  display: flex;
-  align-items: center;
-  width: 100%;
   justify-content: flex-end;
 }
 
@@ -41,17 +50,11 @@
   height: 100%;
   content: "";
   display: inline-block;
-  margin: 0 20px;
+  margin-left: 20px;
 }
 
 .faq:last-child .questionContainer::after {
   height: 150px;
-}
-
-.answer {
-  display: flex;
-  align-items: center;
-  width: 100%;
 }
 
 .question {
@@ -59,14 +62,43 @@
   text-align: right;
 }
 
+.answer {
+  margin-left: 20px;
+}
+
 .contactInformation {
   text-align: center;
   color: #ffbc6b;
 }
 
+@media all and (min-width: 400px) {
+  .faq {
+    height: 70px;
+    min-height: auto;
+  }
+
+  .questionContainer,
+  .answer {
+    align-items: center;
+  }
+}
+
 @media all and (min-width: 700px) {
+  .faqList {
+    margin-bottom: 7rem;
+  }
+
   .faq {
     height: 50px;
     letter-spacing: 4px;
+  }
+
+  .faq:last-child .questionContainer::after {
+    height: 150px;
+  }
+
+  .questionContainer,
+  .answer {
+    width: 100%;
   }
 }
