@@ -29,9 +29,9 @@
 
 .faq {
   display: flex;
-  min-height: 80px;
+  height: fit-content;
   color: white;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-weight: 200;
   font-size: 0.8rem;
   word-break: break-word;
@@ -42,23 +42,13 @@
 .answer {
   display: flex;
   width: 20rem;
+  padding-bottom: 20px;
 }
 
 .questionContainer {
   justify-content: flex-end;
-}
-
-.questionContainer::after {
-  width: 2px;
-  background-color: #ffbc6b;
-  height: 100%;
-  content: "";
-  display: inline-block;
-  margin-left: 20px;
-}
-
-.faq:last-child .questionContainer::after {
-  height: 150px;
+  padding-right: 20px;
+  border-right: 2px solid @secondaryColor;
 }
 
 .question {
@@ -75,30 +65,13 @@
   color: #ffbc6b;
 }
 
-@media all and (min-width: 400px) {
-  .faq {
-    height: 70px;
-    min-height: auto;
-  }
-
-  .questionContainer,
-  .answer {
-    align-items: center;
-  }
+.faq:last-child .questionContainer {
+  padding-bottom: 100px;
 }
 
 @media all and (min-width: 700px) {
-  .faqList {
-    margin-bottom: 7rem;
-  }
-
   .faq {
-    height: 50px;
     letter-spacing: 4px;
-  }
-
-  .faq:last-child .questionContainer::after {
-    height: 150px;
   }
 
   .questionContainer,
