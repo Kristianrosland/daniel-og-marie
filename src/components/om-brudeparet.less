@@ -5,6 +5,10 @@
 .container {
   margin: @blockSpacing 0 0 0;
   width: 100%;
+
+  @media all and (max-width: @mobileLarge) {
+    margin-top: @mobileBlockSpacing;
+  }
 }
 
 .textContainer {
