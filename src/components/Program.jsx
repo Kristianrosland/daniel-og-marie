@@ -12,9 +12,6 @@ const hoylandKirkeLink =
 const froylandGardLink =
   "https://www.google.no/maps/place/Fr%C3%B8yland+Gard/@58.776594,5.7248356,17z/data=!4m12!1m6!3m5!1s0x463a39cc9dbc2e1f:0x8b0269a787ae74c4!2sFr%C3%B8yland+Gard!8m2!3d58.776594!4d5.7270243!3m4!1s0x463a39cc9dbc2e1f:0x8b0269a787ae74c4!8m2!3d58.776594!4d5.7270243?hl=no";
 
-const ruteLink =
-  "https://www.google.no/maps/dir/H%C3%B8yland+kirke,+Sandnes/Fr%C3%B8yland+Gard,+Fr%C3%B8ylandsvegen,+Kvernaland/@58.8098379,5.699762,13z/am=t/data=!4m15!4m14!1m5!1m1!1s0x463a3704ed522f0f:0x8c507f1ee4d781b1!2m2!1d5.750392!2d58.831448!1m5!1m1!1s0x463a39cc9dbc2e1f:0x8b0269a787ae74c4!2m2!1d5.7270243!2d58.776594!3e0!5i2";
-
 const Program = ({ refProp }) => {
   const [events, setEvents] = useState({});
 
