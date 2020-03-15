@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BoxWithHeader from "./BoxWithHeader";
 import locationPin from "../icons/location-pin.svg";
+import maps from "../images/kart.png";
 import css from "./program.less";
 
 import * as firebase from "firebase/app";
@@ -51,6 +52,14 @@ const Program = ({ refProp }) => {
           <div className={css.links}>
             <MapLink href={hoylandKirkeLink} label="Høyland Kirke" />
             <MapLink href={froylandGardLink} label="Frøyland gard" />
+
+            {false && (
+              <img
+                src={maps}
+                alt="Google mapsbilde"
+                className={css.mapsImage}
+              />
+            )}
           </div>
 
           <div className={css.menuContainer}>
