@@ -7,6 +7,7 @@ import chevron from "../icons/right-chevron.svg";
 import checkmark from "../icons/checkmark.svg";
 import cross from "../icons/cross.svg";
 import editIcon from "../icons/edit.svg";
+import closeCross from "../icons/yellow-cross.svg";
 import css from "./rsvp.less";
 
 const RSVP = ({
@@ -36,7 +37,16 @@ const RSVP = ({
       setCode(newCode);
 
       if (newCode.length === 5) {
-        login(newCode, () => setCode(""));
+        await login(newCode, () => {
+          setCode("");
+          if (refProp && refProp.current) {
+            const currentY = window.pageYOffset;
+            window.scrollTo(
+              0,
+              Math.min(currentY, refProp.current.offsetTop - 15)
+            );
+          }
+        });
       }
     }
   };
@@ -96,21 +106,12 @@ const RSVP = ({
                 </div>
                 <div className={css.form}>
                   <div className={css.menu}>
-                    <MenuEntry
-                      header={"Forrett"}
-                      course={"Kveite ceviche"}
-                      signOut={signOut}
-                    />
+                    <MenuEntry header={"Forrett"} course={"Kveite ceviche"} />
                     <MenuEntry
                       header={"Hovedrett"}
                       course={"Entrecote av jærkalv"}
-                      signOut={signOut}
                     />
-                    <MenuEntry
-                      header={"Dessert"}
-                      course={"Peanøtt mousse"}
-                      signOut={signOut}
-                    />
+                    <MenuEntry header={"Dessert"} course={"Peanøtt mousse"} />
                   </div>
                 </div>
               </div>
@@ -126,18 +127,29 @@ const RSVP = ({
                   }
                   required={true}
                 />
-              ) : allergies.length > 0 ? (
+              ) : (
                 <div style={{ marginBottom: "auto" }}>
                   <div className={css.allergiesHeader}>Allergier</div>
-                  <div className={css.allergiesText}>{allergies}</div>
+                  <div className={css.allergiesText}>
+                    {allergies.length > 0 ? allergies : "Ingen"}
+                  </div>
                 </div>
-              ) : null}
+              )}
 
               <SaveButton
                 onClick={editing ? save : () => setEditing(true)}
                 savingState={savingState}
                 edit={!editing}
               />
+
+              {!editing && (
+                <img
+                  src={closeCross}
+                  alt="Close-button"
+                  className={css.closeButton}
+                  onClick={signOut}
+                />
+              )}
             </div>
           ) : (
             <>
@@ -199,8 +211,8 @@ const GuestCheckboxWithLabel = ({ label, checked, onChange, style }) => (
   </div>
 );
 
-const MenuEntry = ({ header, course, signOut }) => (
-  <div className={css.menuEntry} onClick={signOut}>
+const MenuEntry = ({ header, course }) => (
+  <div className={css.menuEntry}>
     <div className={css.courseHeader}>{header}</div>
     <div className={css.courseDescription}>{course}</div>
   </div>

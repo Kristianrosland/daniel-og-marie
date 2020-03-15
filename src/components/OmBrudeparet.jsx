@@ -20,7 +20,7 @@ const OmBrudeparet = ({ refProp }) => {
           fem kompiser - «The Norwegians».
           <br />
           <br />
-          Kjærlighet oppsto ikke før ett år senere, når Marie bestemte seg for å
+          Kjærlighet oppsto ikke før ett år senere, da Marie bestemte seg for å
           sikre seg Daniel før studietiden var over. Bestemt og målrettet som
           Marie er, var det ikke annet for Daniel å gjøre enn å hoppe på toget i
           full fart. Siden har de hengt sammen i tykt og tynt. Marie og Daniel
@@ -33,7 +33,7 @@ const OmBrudeparet = ({ refProp }) => {
           <br />
           Voksenlivet har for lengst startet for duoen som nå bor i Harstad.
           Jobb, hus og bil er allerede på plass. Neste steg for det
-          tradisjonelle paret må dermed være ekteskap og bryllup. Duoen ser frem
+          tradisjonelle paret må dermed være bryllup og ekteskap. Duoen ser frem
           til å feire dagen med både familie og venner fra hele landet - Nord,
           Sør, Øst og Vest.
         </div>

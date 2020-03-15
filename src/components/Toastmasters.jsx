@@ -45,24 +45,21 @@ const Toastmasters = ({ refProp }) => {
         </div>
 
         <div className={css.bottomContainer}>
-          <a className={css.contactInfo} href="tel:+4740048331">
+          <a className={css.contactInfo} href="tel:+4791166004">
             <img src={phone} alt="" />
-            +47 400 48 331
+            +47 911 66 004
           </a>
-          <a
-            className={css.contactInfo}
-            href="mailto:kristian.hartmann@gmail.com"
-          >
+          <a className={css.contactInfo} href="mailto:sirikjoren@gmail.com">
             <img src={mail} alt="" className={css.mail} />
-            kristian.hartmann@gmail.com
+            sirikjoren@gmail.com
           </a>
           <a
             className={css.contactInfo}
-            href="https://facebook.com/kristian.hartmann"
+            href="https://www.facebook.com/profile.php?id=556471128"
             target="__blank"
           >
             <img src={fb} alt="" className={css.fb} />
-            kristian.hartmann
+            Siri Kjøren
           </a>
           <a
             className={css.contactInfo}

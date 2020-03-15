@@ -26,14 +26,14 @@ const Countdown = () => {
         </>
       )}
 
-      {hours > 0 && (
+      {(hours > 0 || days > 0) && (
         <>
           {hours}
           <span>t</span>
         </>
       )}
 
-      {minutes > 0 && (
+      {(minutes > 0 || hours > 0 || days > 0) && (
         <>
           {minutes}
           <span>m</span>

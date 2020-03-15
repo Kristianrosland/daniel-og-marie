@@ -58,6 +58,27 @@ html {
   }
 }
 
+.hashtag {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+
+  width: fit-content;
+  color: @primaryColor;
+  letter-spacing: @letterSpacingLarge;
+
+  @media all and (max-width: @mobileLarge) {
+    width: 100%;
+    margin-left: 1rem;
+
+    position: relative;
+    top: 2rem;
+
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
 .gifterSeg {
   color: @secondaryColor;
   font-family: @fontPermanentMarker;
@@ -105,7 +126,8 @@ html {
   }
 }
 
-.headerImage {
+.headerImageContainer {
+  position: relative;
   width: 100%;
 
   @media all and (max-width: 600px) {
@@ -115,10 +137,14 @@ html {
   @media all and (max-width: 900px) {
     width: 150%;
   }
+
+  img {
+    width: 100%;
+  }
 }
 
 .menuBar  {
-  @media all and (max-width: 450px) {
+  @media all and (max-width: @mobileLarge) {
     display: none;
   }
 
