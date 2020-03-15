@@ -13,6 +13,9 @@ const hoylandKirkeLink =
 const froylandGardLink =
   "https://www.google.no/maps/place/Fr%C3%B8yland+Gard/@58.776594,5.7248356,17z/data=!4m12!1m6!3m5!1s0x463a39cc9dbc2e1f:0x8b0269a787ae74c4!2sFr%C3%B8yland+Gard!8m2!3d58.776594!4d5.7270243!3m4!1s0x463a39cc9dbc2e1f:0x8b0269a787ae74c4!8m2!3d58.776594!4d5.7270243?hl=no";
 
+const ruteLink =
+  "https://www.google.com/maps/dir/H%C3%B8yland+kirke,+Kyrkjevegen+345,+4325+Sandnes/Fr%C3%B8yland+Gard,+Fr%C3%B8ylandsvegen,+Kvernaland/@58.8087006,5.7046322,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x463a37048f2aabc9:0x3e337ee987666139!2m2!1d5.7507066!2d58.8308932!1m5!1m1!1s0x463a39cc9dbc2e1f:0x8b0269a787ae74c4!2m2!1d5.7270243!2d58.776594";
+
 const Program = ({ refProp }) => {
   const [events, setEvents] = useState({});
 
@@ -49,17 +52,12 @@ const Program = ({ refProp }) => {
         </div>
 
         <div className={css.linksAndMenuContainer}>
+          <a href={ruteLink} target="__blank">
+            <img src={maps} alt="Google mapsbilde" className={css.mapsImage} />
+          </a>
           <div className={css.links}>
             <MapLink href={hoylandKirkeLink} label="Høyland Kirke" />
             <MapLink href={froylandGardLink} label="Frøyland gard" />
-
-            {false && (
-              <img
-                src={maps}
-                alt="Google mapsbilde"
-                className={css.mapsImage}
-              />
-            )}
           </div>
 
           <div className={css.menuContainer}>
