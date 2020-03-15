@@ -4,6 +4,7 @@ import css from "./faq.less";
 const FAQ = ({ refProp }) => {
   return (
     <div ref={refProp} className={css.container}>
+      <h2 className={css.header}>Spørsmål og svar</h2>
       <ul className={css.faqList}>
         <li className={css.faq}>
           <div className={css.questionContainer}>
