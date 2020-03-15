@@ -22,9 +22,9 @@
 
 .faq {
   display: flex;
-  height: 50px;
+  height: 70px;
   color: white;
-  letter-spacing: 4px;
+  letter-spacing: 1px;
   font-weight: 200;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .faq:last-child .questionContainer::after {
-  height: 200px;
+  height: 150px;
 }
 
 .answer {
@@ -62,4 +62,11 @@
 .contactInformation {
   text-align: center;
   color: #ffbc6b;
+}
+
+@media all and (min-width: 700px) {
+  .faq {
+    height: 50px;
+    letter-spacing: 4px;
+  }
 }
