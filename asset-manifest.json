@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.34c63f5c.chunk.css",
-    "main.js": "/static/js/main.0ada62fb.chunk.js",
-    "main.js.map": "/static/js/main.0ada62fb.chunk.js.map",
+    "main.css": "/static/css/main.e76743b7.chunk.css",
+    "main.js": "/static/js/main.b0dd921c.chunk.js",
+    "main.js.map": "/static/js/main.b0dd921c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.36931019.js",
     "runtime-main.js.map": "/static/js/runtime-main.36931019.js.map",
-    "static/js/2.4938abdb.chunk.js": "/static/js/2.4938abdb.chunk.js",
-    "static/js/2.4938abdb.chunk.js.map": "/static/js/2.4938abdb.chunk.js.map",
+    "static/js/2.2e75e4aa.chunk.js": "/static/js/2.2e75e4aa.chunk.js",
+    "static/js/2.2e75e4aa.chunk.js.map": "/static/js/2.2e75e4aa.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2bd152eecddb57f299027047826737a7.js": "/precache-manifest.2bd152eecddb57f299027047826737a7.js",
+    "precache-manifest.94fba5e632aa99868573cc67ea1e28aa.js": "/precache-manifest.94fba5e632aa99868573cc67ea1e28aa.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.34c63f5c.chunk.css.map": "/static/css/main.34c63f5c.chunk.css.map",
-    "static/js/2.4938abdb.chunk.js.LICENSE.txt": "/static/js/2.4938abdb.chunk.js.LICENSE.txt",
+    "static/css/main.e76743b7.chunk.css.map": "/static/css/main.e76743b7.chunk.css.map",
+    "static/js/2.2e75e4aa.chunk.js.LICENSE.txt": "/static/js/2.2e75e4aa.chunk.js.LICENSE.txt",
     "static/media/bunad.png": "/static/media/bunad.55f0d281.png",
     "static/media/checkmark.svg": "/static/media/checkmark.5fae9f58.svg",
     "static/media/closed-envelope.svg": "/static/media/closed-envelope.bbb3f07d.svg",
@@ -28,12 +28,13 @@
     "static/media/servise.png": "/static/media/servise.6560ebb7.png",
     "static/media/solbriller.png": "/static/media/solbriller.684f5aa2.png",
     "static/media/svolvaer.png": "/static/media/svolvaer.f52cb24d.png",
-    "static/media/toastmasters.png": "/static/media/toastmasters.837612e7.png"
+    "static/media/toastmasters.png": "/static/media/toastmasters.837612e7.png",
+    "static/media/yellow-cross.svg": "/static/media/yellow-cross.2c320b98.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.36931019.js",
-    "static/js/2.4938abdb.chunk.js",
-    "static/css/main.34c63f5c.chunk.css",
-    "static/js/main.0ada62fb.chunk.js"
+    "static/js/2.2e75e4aa.chunk.js",
+    "static/css/main.e76743b7.chunk.css",
+    "static/js/main.b0dd921c.chunk.js"
   ]
 }
