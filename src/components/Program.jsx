@@ -52,7 +52,7 @@ const Program = ({ refProp }) => {
         </div>
 
         <div className={css.linksAndMenuContainer}>
-          <a href={ruteLink} target="__blank">
+          <a href={ruteLink} target="__blank" className={css.mapsContainer}>
             <img src={maps} alt="Google mapsbilde" className={css.mapsImage} />
           </a>
           <div className={css.links}>
