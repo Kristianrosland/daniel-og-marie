@@ -9,6 +9,7 @@ import OmBrudeparet from "./components/OmBrudeparet";
 import Forlovere from "./components/Forlovere";
 import FAQ from "./components/FAQ";
 import AdminApp from "./admin/AdminApp";
+import CoronaInformation from "./components/CoronaInformation";
 
 import { FirebaseAuthProvider } from "@react-firebase/auth";
 import config from "./firebase.config.js";
@@ -27,7 +28,7 @@ const menuItems = [
   { text: "Hvem er vi?" },
   { text: "Program" },
   { text: "Gaveønsker" },
-  { text: "FAQ" }
+  { text: "FAQ" },
 ];
 
 const App = () => {
@@ -38,7 +39,7 @@ const App = () => {
   const omBrudeparetRef = useRef(null);
   const faqRef = useRef(null);
 
-  const scrollTo = menuItem => {
+  const scrollTo = (menuItem) => {
     let ref = null;
     if (menuItem === "Kommer du?") {
       ref = rsvpRef;
@@ -78,7 +79,7 @@ const App = () => {
             </div>
 
             <div className={css.menuBar}>
-              {menuItems.map(item => (
+              {menuItems.map((item) => (
                 <span
                   key={item.text}
                   className={css.menuItem}
@@ -90,6 +91,8 @@ const App = () => {
             </div>
 
             <Countdown />
+
+            <CoronaInformation />
 
             <RSVPDataWrapper refProp={rsvpRef} />
 

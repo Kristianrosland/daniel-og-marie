@@ -1,0 +1,67 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.container {
+  width: 100%;
+  margin-top: @mobileBlockSpacing;
+}
+
+.header {
+  width: 100%;
+  font-family: @fontPermanentMarker;
+  font-size: 1.5rem;
+  color: @secondaryColor;
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+
+  @media all and (max-width: 950px) {
+    flex-direction: column;
+  }
+}
+
+.descriptionContainer {
+  flex: 1 0 60%;
+  padding-right: 2.5rem;
+
+  @media all and (max-width: 1200px) {
+    flex: 1 0 40%;
+  }
+
+  @media all and (max-width: 950px) {
+    padding-right: 0;
+  }
+}
+
+.description {
+  color: white;
+  font-family: @fontRoboto;
+  letter-spacing: 2px;
+  text-align: justify;
+}
+
+.bottomBorder {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid @secondaryColor;
+  margin-bottom: 2rem;
+}
+
+.regards {
+  font-size: 1.5rem;
+  color: @secondaryColor;
+  font-family: @fontPermanentMarker;
+  margin-top: 1.5rem;
+}
+
+.coronaImage {
+  object-fit: contain;
+  margin-bottom: auto;
+
+  @media all and (max-width: 950px) {
+    margin-top: 1rem;
+  }
+}
