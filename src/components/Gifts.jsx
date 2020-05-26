@@ -6,6 +6,9 @@ import css from "./gifts.less";
 const gavelisteUrl =
   "https://www.gavelisten.no/list/XRTDTXF/guest?fbclid=IwAR3DIOIo-j4RhixuOIAgiThyuCWQt0Ufe089jjW7qEQqX5EsBDgwd4t42yk";
 
+const tilbordsListe =
+  "https://www.tilbords.no/bryllup/vis-liste/?wishListId=58490";
+
 const Gifts = ({ refProp }) => {
   return (
     <div className={css.container} ref={refProp}>
@@ -29,11 +32,15 @@ const Gifts = ({ refProp }) => {
       />
 
       <div className={css.link}>
-        Trykk{" "}
-        <a href={gavelisteUrl} target="__blank">
+        Vi har opprettet to gavelister. En på Tilbords{" "}
+        <a href={tilbordsListe} target="__blank">
           her
         </a>{" "}
-        for å se gavelisten
+        og en digital fra flere butikker{" "}
+        <a href={gavelisteUrl} target="__blank">
+          her.
+        </a>{" "}
+        Vi ønsker oss også gavekort på Tilbords, med tanke på deres beleilighet.
       </div>
 
       <div className={css.psst1}>Psst..</div>
