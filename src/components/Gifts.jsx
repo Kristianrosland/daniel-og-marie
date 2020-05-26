@@ -50,8 +50,8 @@ const Gifts = ({ refProp }) => {
         .
         <br />
         <br />
-        Vi ønsker oss også gavekort fra Tilbords, med tanke på deres
-        beleilighet.
+        Vi tar gjerne gavekort fra Tilbords fra de som ikke ønsker å frakte med
+        seg gave.
       </div>
 
       <div className={css.psst1}>Psst..</div>
