@@ -24,9 +24,9 @@ const Program = ({ refProp }) => {
       .firestore()
       .collection("program")
       .get()
-      .then(snapshot => {
-        snapshot.forEach(doc => {
-          setEvents(oldEvents => ({ ...oldEvents, [doc.id]: doc.data() }));
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          setEvents((oldEvents) => ({ ...oldEvents, [doc.id]: doc.data() }));
         });
       });
   }, []);
@@ -44,7 +44,7 @@ const Program = ({ refProp }) => {
     <BoxWithHeader header="Programmet" refProp={refProp}>
       <div className={css.container}>
         <div className={css.eventList}>
-          {sortedEvents.map(e => (
+          {sortedEvents.map((e) => (
             <div key={e.title} className={css.event}>
               {e.time ? `${e.time} -` : ""} {e.title}
             </div>
@@ -52,7 +52,12 @@ const Program = ({ refProp }) => {
         </div>
 
         <div className={css.linksAndMenuContainer}>
-          <a href={ruteLink} target="__blank" className={css.mapsContainer}>
+          <a
+            href={ruteLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={css.mapsContainer}
+          >
             <img src={maps} alt="Google mapsbilde" className={css.mapsImage} />
           </a>
           <div className={css.links}>
@@ -84,7 +89,7 @@ const Program = ({ refProp }) => {
 const MapLink = ({ href, label }) => (
   <div className={css.link}>
     <img src={locationPin} alt="" />
-    <a href={href} target="__blank">
+    <a href={href} target="_blank" rel="noopener noreferrer">
       {label}
     </a>
   </div>

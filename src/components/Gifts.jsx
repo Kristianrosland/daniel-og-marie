@@ -32,15 +32,26 @@ const Gifts = ({ refProp }) => {
       />
 
       <div className={css.link}>
-        Vi har opprettet to gavelister. En på Tilbords{" "}
-        <a href={tilbordsListe} target="__blank">
+        Vi har opprettet to gavelister.
+        <br />
+        <br />
+        Den ene listen finnes fysisk i alle Tilbordsbutikker og digitalt{" "}
+        <a href={tilbordsListe} target="_blank" rel="noopener noreferrer">
           her
-        </a>{" "}
-        og en digital fra flere butikker{" "}
-        <a href={gavelisteUrl} target="__blank">
-          her.
-        </a>{" "}
-        Vi ønsker oss også gavekort på Tilbords, med tanke på deres beleilighet.
+        </a>
+        .
+        <br />
+        <br />
+        Den andre listen inneholder ønsker som ikke finnes på Tilbords, og
+        finnes kun i digital versjon{" "}
+        <a href={gavelisteUrl} target="_blank" rel="noopener noreferrer">
+          her
+        </a>
+        .
+        <br />
+        <br />
+        Vi ønsker oss også gavekort fra Tilbords, med tanke på deres
+        beleilighet.
       </div>
 
       <div className={css.psst1}>Psst..</div>

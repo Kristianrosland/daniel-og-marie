@@ -12,14 +12,16 @@ const Forlovere = () => {
           Brudens forlovere er hennes gode veninner{" "}
           <a
             href={"https://www.facebook.com/marie.nesheim?ref=br_rs"}
-            target="__blank"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Marie
           </a>{" "}
           og{" "}
           <a
             href={"https://www.facebook.com/hholte1?ref=br_rs"}
-            target="__blank"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Heidi
           </a>
@@ -37,7 +39,8 @@ const Forlovere = () => {
           Brudgommens forlover er bror og kompis{" "}
           <a
             href={"https://www.facebook.com/kristianrosland1.0?ref=br_rs"}
-            target="__blank"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Kristian
           </a>

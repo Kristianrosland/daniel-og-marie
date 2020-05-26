@@ -56,7 +56,8 @@ const Toastmasters = ({ refProp }) => {
           <a
             className={css.contactInfo}
             href="https://www.facebook.com/profile.php?id=556471128"
-            target="__blank"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <img src={fb} alt="" className={css.fb} />
             Siri Kjøren
@@ -64,7 +65,8 @@ const Toastmasters = ({ refProp }) => {
           <a
             className={css.contactInfo}
             href="https://instagram.com/kristianhartmann"
-            target="__blank"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <img src={ig} alt="" />
             @kristianhartmann
