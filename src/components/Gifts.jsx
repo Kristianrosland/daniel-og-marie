@@ -50,8 +50,8 @@ const Gifts = ({ refProp }) => {
         .
         <br />
         <br />
-        Vi tar gjerne gavekort fra Tilbords fra de som ikke ønsker å frakte med
-        seg gave.
+        Vi tar gjerne imot pengegaver til kontonr 1224.55.94966 fra de som ikke
+        ønsker å frakte med seg gave. Husk å merk det med navn!
       </div>
 
       <div className={css.psst1}>Psst..</div>
